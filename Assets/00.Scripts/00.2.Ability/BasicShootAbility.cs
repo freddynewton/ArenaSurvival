@@ -33,7 +33,7 @@ namespace freddynewton.Ability
 
         private void InstantiateProjectile(Vector3 spawnPosition, Vector3 pointToShoot)
         {
-            var muzzleFlash = Instantiate(projectile, spawnPosition, Quaternion.identity, null);
+            var muzzleFlash = Instantiate(this.muzzleFlash, spawnPosition, Quaternion.identity, null);
             var projectileObj = Instantiate(projectile, spawnPosition, Quaternion.identity, null);
 
             projectileObj.layer = LayerMask.NameToLayer("PlayerBullet");

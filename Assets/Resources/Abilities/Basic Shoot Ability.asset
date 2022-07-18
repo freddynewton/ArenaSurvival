@@ -19,7 +19,7 @@ MonoBehaviour:
   isButtonPressed: 0
   projectile: {fileID: 6155778411382931008, guid: da853b11755728a418dc745c9f681e58,
     type: 3}
-  muzzleFlash: {fileID: 1357030889595668, guid: 31d15199ffdbd87468857df8492d57ae,
+  muzzleFlash: {fileID: 1291653246976116, guid: 42a2483f6efc40e47865798c10be8834,
     type: 3}
   pojectileSpeed: 6000
   arcRange: 3

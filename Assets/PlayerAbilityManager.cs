@@ -7,11 +7,18 @@ namespace freddynewton.Ability
 {
     public class PlayerAbilityManager : MonoBehaviour
     {
-        [Header("Mouse 0 Ability")]
         public Ability mouse0Ability;
         private float currentMouse0AbilityGlobalCD = 1;
 
-        [Header("Space Ability")]
+        public Ability mouse1Ability;
+        private float currentMouse1AbilityGlobalCD = 1;
+
+        public Ability eAbility;
+        private float currentEAbilityGlobalCD = 1;
+
+        public Ability qAbility;
+        private float currentQAbilityGlobalCD = 1;
+
         public Ability spaceAbility;
         private float currentSpaceAbilityGlobalCD = 1;
 
@@ -45,6 +52,21 @@ namespace freddynewton.Ability
             if (currentMouse0AbilityGlobalCD > 0)
             {
                 currentMouse0AbilityGlobalCD -= Time.deltaTime;
+            }
+
+            if (currentMouse1AbilityGlobalCD > 0)
+            {
+                currentMouse1AbilityGlobalCD -= Time.deltaTime;
+            }
+
+            if (currentEAbilityGlobalCD > 0)
+            {
+                currentEAbilityGlobalCD -= Time.deltaTime;
+            }
+
+            if (currentQAbilityGlobalCD > 0)
+            {
+                currentQAbilityGlobalCD -= Time.deltaTime;
             }
 
             CheckMouseButton0Press();
