@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b748eb32a051a754a908af8cd6cd4543, type: 3}
+  m_Name: Test Shoot
+  m_EditorClassIdentifier: 
+  Name: 
+  Description: 
+  Icon: {fileID: 0}
+  CoolDownTime: 0
+  isButtonPressed: 0
+  projectile: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  pojectileSpeed: 300
+  arcRange: 1
+  punchTimeMin: 0.5
+  punchTimeMax: 5
