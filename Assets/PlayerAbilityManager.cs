@@ -50,7 +50,7 @@ namespace freddynewton.Ability
 
         private Ability GetAbility(AbilityType abilityType)
         {
-            return Abilities.First(ability => ability.AbilityType == AbilityType.MOUSE0);
+            return Abilities.ToList().Find(ability => ability.AbilityType == AbilityType.MOUSE0);
         }
 
         private void CheckMouseButton0Press()
