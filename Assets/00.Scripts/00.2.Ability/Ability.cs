@@ -9,8 +9,10 @@ namespace freddynewton.Ability
         public string Name;
         public string Description;
         public Sprite Icon;
+        public AbilityType AbilityType = AbilityType.MOUSE0;
 
         public float CoolDownTime;
+        [HideInInspector] public float currentCooldownTime;
         [HideInInspector] public bool isButtonPressed;
 
         public abstract void Use(PlayerAbilityManager playerAbilityManager);

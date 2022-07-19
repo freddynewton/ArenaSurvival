@@ -15,7 +15,10 @@ MonoBehaviour:
   Name: 
   Description: 
   Icon: {fileID: 0}
+  AbilityType: 4
   CoolDownTime: 2
+  currentCooldownTime: 0
+  isButtonPressed: 0
   DashTime: 0.2
   DashSpeed: 6
   GlowMaterial: {fileID: 2100000, guid: 9b0d1cd58af9ef5498657ab0842bc761, type: 2}
