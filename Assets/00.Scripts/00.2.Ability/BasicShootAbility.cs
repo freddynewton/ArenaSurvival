@@ -45,7 +45,6 @@ namespace freddynewton.Ability
 
             projectileObj.GetComponent<Rigidbody>().velocity = (pointToShoot - spawnPosition).normalized * pojectileSpeed * Time.deltaTime;
 
-
             iTween.PunchPosition(projectileObj, new Vector3(Random.Range(-arcRange, arcRange), 0, Random.Range(-arcRange, arcRange)), Random.Range(punchTimeMin, punchTimeMax));
         }
     }
