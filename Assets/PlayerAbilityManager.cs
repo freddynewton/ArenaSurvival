@@ -72,8 +72,39 @@ namespace freddynewton.Ability
         private void Awake()
         {
             PlayerManager.Instance.PlayerInputActionAsset.FindActionMap("Player").FindAction("Space").started += PlayerAbilityManager_started;
+
             PlayerManager.Instance.PlayerInputActionAsset.FindActionMap("Player").FindAction("Fire").started += PlayerAbilityManager_Mouse0_Activate;
             PlayerManager.Instance.PlayerInputActionAsset.FindActionMap("Player").FindAction("Fire").canceled += PlayerAbilityManager_Mouse0_Deactivate;
+
+            PlayerManager.Instance.PlayerInputActionAsset.FindActionMap("Player").FindAction("FireBig").started += PlayerAbilityManager_Mouse1_Activate;
+            PlayerManager.Instance.PlayerInputActionAsset.FindActionMap("Player").FindAction("FireBig").canceled += PlayerAbilityManager_Mouse1_Deactivate;
+        }
+
+        //TODO CHANGE FÙNCTIUONS
+        private void PlayerAbilityManager_Mouse1_Deactivate(InputAction.CallbackContext obj)
+        {
+            var ability = GetAbility(AbilityType.MOUSE1);
+
+            if (ability == null)
+            {
+                return;
+            }
+
+            ability.isButtonPressed = false;
+        }
+
+        private void PlayerAbilityManager_Mouse1_Activate(InputAction.CallbackContext obj)
+        {
+            var ability = GetAbility(AbilityType.MOUSE1);
+
+            if (ability == null)
+            {
+                return;
+            }
+
+            ability.Use(this);
+
+            ability.isButtonPressed = true;
         }
 
         private void PlayerAbilityManager_Mouse0_Deactivate(InputAction.CallbackContext obj)

@@ -15,23 +15,22 @@ namespace freddynewton.Ability
         [SerializeField] protected float punchTimeMin = 0.5f;
         [SerializeField] protected float punchTimeMax = 5f;
 
+        protected Vector3 pointToLook;
+        protected PlayerAbilityManager playerAbilityManager;
+
         public override void Use(PlayerAbilityManager playerAbilityManager)
         {
-            Debug.Log("Shoot");
-            Ray cameraRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-            float rayLength;
-            Vector3 pointToLook;
+            this.playerAbilityManager = playerAbilityManager;
 
-            if (groundPlane.Raycast(cameraRay, out rayLength))
+            pointToLook = GetPointToLook();
+
+            if (pointToLook != Vector3.zero)
             {
-                pointToLook = cameraRay.GetPoint(rayLength);
-                pointToLook.y += 0.5f;
                 InstantiateProjectile(playerAbilityManager.transform.position + new Vector3(0, 0.5f, 0), pointToLook);
             }
         }
 
-        private void InstantiateProjectile(Vector3 spawnPosition, Vector3 pointToShoot)
+        protected virtual void InstantiateProjectile(Vector3 spawnPosition, Vector3 pointToShoot)
         {
             var muzzleFlash = Instantiate(this.muzzleFlash, spawnPosition, Quaternion.identity, null);
             var projectileObj = Instantiate(projectile, spawnPosition, Quaternion.identity, null);

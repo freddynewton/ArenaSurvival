@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74550d971da9e54f94c42e28316ff7d, type: 3}
+  m_Name: Shotgun Ability
+  m_EditorClassIdentifier: 
+  Name: 
+  Description: 
+  Icon: {fileID: 0}
+  AbilityType: 1
+  CoolDownTime: 0
+  currentCooldownTime: 0
+  isButtonPressed: 0
+  projectile: {fileID: 6155778411382931008, guid: da853b11755728a418dc745c9f681e58,
+    type: 3}
+  muzzleFlash: {fileID: 6155778411382931008, guid: da853b11755728a418dc745c9f681e58,
+    type: 3}
+  pojectileSpeed: 4000
+  arcRange: 0.5
+  punchTimeMin: 0.5
+  punchTimeMax: 2
+  bulletAmount: 8
+  bulletLifeTime: 0.3
+  bulletFlyArc: 25
