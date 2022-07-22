@@ -36,12 +36,15 @@ namespace freddynewton
         {
             yield return new WaitForSeconds(time);
 
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            var impact = Instantiate(ImpactVfx, transform.position, Quaternion.identity) as GameObject;
+            if (gameObject != null)
+            {
+                gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                var impact = Instantiate(ImpactVfx, transform.position, Quaternion.identity) as GameObject;
 
-            Destroy(impact, 2);
+                Destroy(impact, 2);
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

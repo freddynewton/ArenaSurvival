@@ -64,6 +64,15 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FireAbilityQ"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d442878-583b-454a-af21-5cf375d3f9e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Space"",
                     ""type"": ""Button"",
                     ""id"": ""ce1c39c4-7aba-4e6c-aa04-6eedf106ec3d"",
@@ -357,6 +366,61 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""FireBig"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33f70b14-562d-4a64-841d-a5f6b5d08402"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""FireAbilityQ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12d2c9db-782b-4fb4-b155-c57f484230ab"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FireAbilityQ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85c81a54-1f44-48e5-a4af-a27981bb7b19"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""FireAbilityQ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""493d3875-e0e2-4b82-8635-e929286c6f0e"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""FireAbilityQ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""459c7961-7d27-4283-9fe2-f566b8615c59"",
+                    ""path"": ""<XRController>/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""FireAbilityQ"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -948,6 +1012,7 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_FireBig = m_Player.FindAction("FireBig", throwIfNotFound: true);
+        m_Player_FireAbilityQ = m_Player.FindAction("FireAbilityQ", throwIfNotFound: true);
         m_Player_Space = m_Player.FindAction("Space", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1024,6 +1089,7 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_FireBig;
+    private readonly InputAction m_Player_FireAbilityQ;
     private readonly InputAction m_Player_Space;
     public struct PlayerActions
     {
@@ -1033,6 +1099,7 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @FireBig => m_Wrapper.m_Player_FireBig;
+        public InputAction @FireAbilityQ => m_Wrapper.m_Player_FireAbilityQ;
         public InputAction @Space => m_Wrapper.m_Player_Space;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -1055,6 +1122,9 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
                 @FireBig.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireBig;
                 @FireBig.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireBig;
                 @FireBig.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireBig;
+                @FireAbilityQ.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAbilityQ;
+                @FireAbilityQ.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAbilityQ;
+                @FireAbilityQ.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAbilityQ;
                 @Space.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
                 @Space.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
                 @Space.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
@@ -1074,6 +1144,9 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
                 @FireBig.started += instance.OnFireBig;
                 @FireBig.performed += instance.OnFireBig;
                 @FireBig.canceled += instance.OnFireBig;
+                @FireAbilityQ.started += instance.OnFireAbilityQ;
+                @FireAbilityQ.performed += instance.OnFireAbilityQ;
+                @FireAbilityQ.canceled += instance.OnFireAbilityQ;
                 @Space.started += instance.OnSpace;
                 @Space.performed += instance.OnSpace;
                 @Space.canceled += instance.OnSpace;
@@ -1237,6 +1310,7 @@ public partial class @Arenasurvivalgame : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnFireBig(InputAction.CallbackContext context);
+        void OnFireAbilityQ(InputAction.CallbackContext context);
         void OnSpace(InputAction.CallbackContext context);
     }
     public interface IUIActions

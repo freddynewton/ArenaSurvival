@@ -18,21 +18,9 @@ namespace freddynewton.Ability
 
         public abstract void Use(PlayerAbilityManager playerAbilityManager);
 
-        protected Vector3 GetPointToLook ()
+        protected void ApplyPlayerBackwardsKnockback(float strength, PlayerAbilityManager playerAbilityManager)
         {
-            Ray cameraRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-            float rayLength;
-            Vector3 pointToLook = new Vector3();
-
-            if (groundPlane.Raycast(cameraRay, out rayLength))
-            {
-                pointToLook = cameraRay.GetPoint(rayLength);
-                pointToLook.y += 0.5f;
-                return pointToLook;
-            }
-
-            return pointToLook;
+            playerAbilityManager.Playermovement.playerRigidbody.AddForce((playerAbilityManager.transform.position - CameraCrosshair.Instance.GetPointToLook()).normalized * strength * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }

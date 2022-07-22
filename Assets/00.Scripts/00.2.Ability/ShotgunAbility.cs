@@ -10,12 +10,19 @@ namespace freddynewton.Ability
     {
         [Header("Shotgun Stats")]
         [SerializeField] protected int bulletAmount;
-        [SerializeField] protected float bulletLifeTime;
         [SerializeField] protected float bulletFlyArc;
 
         public override void Use(PlayerAbilityManager playerAbilityManager)
         {
-            base.Use(playerAbilityManager);
+            this.playerAbilityManager = playerAbilityManager;
+
+            pointToLook = CameraCrosshair.Instance.GetPointToLook();
+
+            if (pointToLook != Vector3.zero)
+            {
+                ApplyPlayerBackwardsKnockback(knockbackStrength, playerAbilityManager);
+                InstantiateProjectile(playerAbilityManager.transform.position + new Vector3(0, 0.5f, 0), pointToLook);
+            }
         }
 
         protected override void InstantiateProjectile(Vector3 spawnPosition, Vector3 pointToShoot)
@@ -29,17 +36,26 @@ namespace freddynewton.Ability
             {
                 var projectileObj = Instantiate(projectile, spawnPosition, Quaternion.identity, null);
                 projectileObj.layer = LayerMask.NameToLayer("PlayerBullet");
-                projectileObj.GetComponent<Rigidbody>().velocity = GetPointInShootingArc(pointToShoot - spawnPosition).normalized * pojectileSpeed * Time.deltaTime;
+                projectileObj.GetComponent<Rigidbody>().velocity = GetPointInShootingArc(pointToShoot - spawnPosition, i).normalized * pojectileSpeed * Time.deltaTime;
 
-                playerAbilityManager.StartCoroutine(projectileObj.GetComponent<Bullet>().DestroyBullet(bulletLifeTime));
+
+                var bullet = projectileObj.GetComponent<Bullet>();
+                bullet.StartCoroutine(bullet.DestroyBullet(bulletLifeTime));
 
                 iTween.PunchPosition(projectileObj, new Vector3(Random.Range(-arcRange, arcRange), 0, Random.Range(-arcRange, arcRange)), Random.Range(punchTimeMin, punchTimeMax));
             }
         }
 
-        protected Vector3 GetPointInShootingArc(Vector3 direction)
+        protected Vector3 GetPointInShootingArc(Vector3 direction, int index)
         {
-            return Quaternion.AngleAxis(Random.Range(-bulletFlyArc, bulletFlyArc), Vector3.up) * direction;
+            var rotation = bulletFlyArc - bulletAmount;
+
+            if (index % 2 != 0)
+            {
+                rotation = -rotation;
+            }
+
+            return Quaternion.AngleAxis(rotation * index, Vector3.up) * direction;
         }
     }
 }

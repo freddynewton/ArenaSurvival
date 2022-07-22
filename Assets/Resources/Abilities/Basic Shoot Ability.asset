@@ -15,7 +15,9 @@ MonoBehaviour:
   Name: 
   Description: 
   Icon: {fileID: 0}
+  AbilityType: 0
   CoolDownTime: 0.22
+  currentCooldownTime: -0.00740458
   isButtonPressed: 0
   projectile: {fileID: 6155778411382931008, guid: da853b11755728a418dc745c9f681e58,
     type: 3}
@@ -25,3 +27,5 @@ MonoBehaviour:
   arcRange: 3
   punchTimeMin: 0.5
   punchTimeMax: 5
+  knockbackStrength: 0
+  bulletLifeTime: 10
