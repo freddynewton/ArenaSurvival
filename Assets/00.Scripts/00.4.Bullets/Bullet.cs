@@ -7,7 +7,7 @@ namespace freddynewton
     public class Bullet : MonoBehaviour
     {
         public LayerMask hitLayer;
-
+        public float Damage;
         public GameObject ImpactVfx;
 
         private void OnCollisionEnter(Collision collision)
@@ -17,6 +17,10 @@ namespace freddynewton
                 var impact = Instantiate(ImpactVfx, collision.contacts[0].point, Quaternion.identity) as GameObject;
 
                 Destroy(impact, 2);
+
+                var unit = collision.gameObject.GetComponent<Unit>();
+
+                unit?.DoDamage(Damage);
 
                 Destroy(gameObject);
             }

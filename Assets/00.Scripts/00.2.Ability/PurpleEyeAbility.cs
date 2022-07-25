@@ -28,6 +28,8 @@ namespace freddynewton.Ability
             projectileObj.layer = LayerMask.NameToLayer("PlayerBullet");
 
             var bullet = projectileObj.GetComponent<Bullet>();
+
+            
             bullet.StartCoroutine(bullet.DestroyBullet(bulletLifeTime));
         }
     }
