@@ -28,10 +28,17 @@ namespace freddynewton
 
         public void DestroyBullet()
         {
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            var impact = Instantiate(ImpactVfx, transform.position, Quaternion.identity) as GameObject;
+            if(gameObject.TryGetComponent<Rigidbody>(out var rb))
+            {
+                rb.velocity = Vector3.zero;
+            }
+            
+            if(ImpactVfx != null)
+            {
+                var impact = Instantiate(ImpactVfx, transform.position, Quaternion.identity) as GameObject;
 
-            Destroy(impact, 2);
+                Destroy(impact, 2);
+            }
 
             Destroy(gameObject);
         }
