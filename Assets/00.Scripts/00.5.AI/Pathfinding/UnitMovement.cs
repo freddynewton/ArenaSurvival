@@ -1,3 +1,4 @@
+using freddynewton.Helper;
 using freddynewton.player;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,8 +27,12 @@ namespace freddynewton.AI
         [SerializeField]
         private Rigidbody rigidbody;
 
-
         public GameObject target;
+
+        [Header("Debug")]
+        [SerializeField]
+        private bool drawPath;
+
         private NavMeshPath path;
 
         private void Awake()
@@ -49,15 +54,38 @@ namespace freddynewton.AI
 
                 if (path.status == NavMeshPathStatus.PathComplete)
                 {
-                rigidbody.MovePosition(transform.position + (transform.position - path.corners[0]).normalized * Time.deltaTime * movementSpeed);
+                rigidbody.MovePosition((path.corners[1] - transform.position).normalized * Time.deltaTime * movementSpeed + transform.position);
                 }
             }
         }
 
         private void CalculatePath()
         {
+            if (path == null)
+            {
+                path = new NavMeshPath();
+            }
+
             path.ClearCorners();
             NavMesh.CalculatePath(transform.position, target.transform.position, -1, path);
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (drawPath)
+            {
+                CalculatePath();
+
+                if (path.status == NavMeshPathStatus.PathComplete)
+                {
+                    Gizmos.color = Color.cyan;
+
+                    for (int i = 0; i < path.corners.Length - 1; i++)
+                    {
+                        Gizmos.DrawLine(path.corners[i], path.corners[i + 1]);
+                    }
+                }
+            }
         }
     }
 }
