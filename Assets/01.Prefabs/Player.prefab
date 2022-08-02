@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6653799950408088071}
   - component: {fileID: 6653799950408088089}
   - component: {fileID: 2087481904}
+  - component: {fileID: 617200532}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,8 +79,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae72007a234069c4d8c8e55401d46666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse0Ability: {fileID: 11400000, guid: ed20c850f07cc984fb49ddecbfc02f6c, type: 2}
-  spaceAbility: {fileID: 11400000, guid: 2cf53218b7c77ad4ea1fa52470d1b201, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 2cf53218b7c77ad4ea1fa52470d1b201, type: 2}
+  - {fileID: 11400000, guid: ed20c850f07cc984fb49ddecbfc02f6c, type: 2}
+  - {fileID: 11400000, guid: ba97c1aeae91e39429f73438620a12d7, type: 2}
+  - {fileID: 11400000, guid: 51efd3497993fd0459817c8b9cbed059, type: 2}
+  - {fileID: 0}
+--- !u!114 &617200532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653799950408088068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4806bdbb5088723429c8ed1f18bbba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 100
+  DamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  StartingHealth: 0
 --- !u!1 &6653799951355190415
 GameObject:
   m_ObjectHideFlags: 0
