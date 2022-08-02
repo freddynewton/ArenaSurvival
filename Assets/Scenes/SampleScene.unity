@@ -1225,10 +1225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 58c4d475735c1c14d8d154471ddc3151, type: 2}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,6 +2860,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1763564154709886670, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073553, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
       propertyPath: m_Enabled
@@ -2883,7 +2888,7 @@ PrefabInstance:
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
       propertyPath: TabNumber
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
@@ -2897,8 +2902,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
+      propertyPath: UseRunAttacks
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
       propertyPath: WanderTypeRef
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
+      propertyPath: AnimationTabNumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
@@ -2927,12 +2942,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
+      propertyPath: AnimationListsChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
       propertyPath: DetectionTagsTabNumber
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
       propertyPath: FactionsAndTagTabNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
+      propertyPath: RunAttack1AnimationSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
@@ -2944,6 +2969,16 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerFaction.Array.data[0].PlayerTag
       value: PlayerAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
+      propertyPath: RunAttackAnimationList.Array.data[0].AnimationClip
+      value: 
+      objectReference: {fileID: 7400000, guid: dc777a92b3599f843aad076e3a18e56f, type: 2}
+    - target: {fileID: 1763564154714073555, guid: f403d0c14b36e894fac961e084b802f4,
+        type: 3}
+      propertyPath: RunAttackAnimationList.Array.data[0].AnimationSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763564154721435738, guid: f403d0c14b36e894fac961e084b802f4,
         type: 3}
@@ -3558,6 +3593,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851522639225819137, guid: cc13e048b0bb9794f9157f6cf851d4fb,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851522639225819137, guid: cc13e048b0bb9794f9157f6cf851d4fb,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4851522639225819139, guid: cc13e048b0bb9794f9157f6cf851d4fb,
         type: 3}
       propertyPath: m_Enabled
@@ -3571,7 +3616,7 @@ PrefabInstance:
     - target: {fileID: 4851522639225819139, guid: cc13e048b0bb9794f9157f6cf851d4fb,
         type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4851522639225819149, guid: cc13e048b0bb9794f9157f6cf851d4fb,
         type: 3}

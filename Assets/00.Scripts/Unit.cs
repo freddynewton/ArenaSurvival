@@ -47,6 +47,8 @@ namespace freddynewton
             {
                 materials[i] = skinnedMeshRenderers[i].material;
             }
+
+            
         }
     }
 }
