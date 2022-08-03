@@ -48,7 +48,7 @@ namespace freddynewton.player
         {
             if (playerMovementVector.magnitude > 0)
             {
-                playerRigidbody.MovePosition(playerMovementVector.ToIso()
+                playerRigidbody.MovePosition(playerMovementVector
                     * PlayerManager.Instance.PlayerStats.MovementSpeed
                     * PlayerManager.Instance.PlayerStats.MovementSpeedMultiplier
                     * Time.deltaTime
