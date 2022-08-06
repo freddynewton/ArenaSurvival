@@ -1,4 +1,4 @@
-using EmeraldAI;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +8,6 @@ namespace freddynewton
     public class Unit : MonoBehaviour
     {
         public Rigidbody rigidbody;
-
-        public EmeraldAISystem emeraldAISystem;
 
         private Material flashMaterial;
         private SkinnedMeshRenderer[] skinnedMeshRenderers;
