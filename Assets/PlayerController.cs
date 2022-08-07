@@ -9,12 +9,12 @@ namespace freddynewton
     {
         public void Damage(float amount)
         {
-            throw new System.NotImplementedException();
+            Debug.Log($"Get {amount} damage");
         }
 
         public bool IsAlive()
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         // Start is called before the first frame update
