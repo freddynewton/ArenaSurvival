@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 025cd8e9f1feaf74db6431b7fd09e752
+guid: dd717882d4a93e94b9940b2020083f3a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Zombie Turn right
+    second: Right Strafe Walking (1)
+  - first:
+      74: 5926794615508136373
+    second: Right Strafe Walking
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +39,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Zombie Turn right
+      name: Right Strafe Walking
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 90
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -48,13 +51,13 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
